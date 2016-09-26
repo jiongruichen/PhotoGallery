@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json.Serialization;
 using PhotoGallery.Infrastructure;
+using PhotoGallery.Infrastructure.Mappings;
 using PhotoGallery.Infrastructure.Repositories;
 using PhotoGallery.Infrastructure.Repositories.Abstract;
 using PhotoGallery.Infrastructure.Services;
@@ -105,7 +106,7 @@ namespace PhotoGallery
             _fileServerOptions.EnableDirectoryBrowsing = true;
             app.UseFileServer(_fileServerOptions);
 
-            //AutoMapperConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
