@@ -41,7 +41,7 @@ export class MembershipService {
         }
     }
 
-    getLoggedUser(): User {
+    getLoggedInUser(): User {
         var _user: User;
 
         if (this.isUserAuthenticated()) {
