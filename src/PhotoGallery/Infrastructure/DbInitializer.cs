@@ -79,6 +79,7 @@ namespace PhotoGallery.Infrastructure
             }
         }
 
+        // Login: admin, Password: photogallery
         private static void InitializeUserRoles()
         {
             if (!context.Roles.Any())
@@ -99,19 +100,19 @@ namespace PhotoGallery.Infrastructure
             {
                 context.Users.Add(new User()
                 {
-                    Email = "chsakells.blog@gmail.com",
-                    Username = "chsakell",
-                    HashedPassword = "9wsmLgYM5Gu4zA/BSpxK2GIBEWzqMPKs8wl2WDBzH/4=",
-                    Salt = "GTtKxJA6xJuj3ifJtTXn9Q==",
+                    Email = "admin@mail.com",
+                    Username = "admin",
+                    HashedPassword = "onu9Jwb+eUOh2upbeMArSTtzAFbH7K8xv5wJQmCRQps=",
+                    Salt = "Xcgjq27FS+hxJMdF5JE59A==",
                     IsLocked = false,
                     DateCreated = DateTime.Now
                 });
 
-                // create user-admin for chsakell
+                // create user-admin
                 context.UserRoles.AddRange(new UserRole[] {
                     new UserRole() {
-                        RoleId = 1, // admin
-                        UserId = 1  // chsakell
+                        RoleId = 1,
+                        UserId = 1
                     }
                 });
 
